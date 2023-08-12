@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Dungeons and Dragons Magic Items Randomizer" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Miki's Magics</title>
+        <link rel="stylesheet" href="test.css" />
+        <script src="test.js"></script>
+    </head>
+    <body>
+        <header id="header">
+            <!--Upper left corner header-->
+            <h4 class="corner-head">Miki's Magics</h4>
+            <!--Clickable links in the upper right of the page-->
+            <nav id="nav-bar">
+                <ul>
+                    <!--TODO create links for ul-->
+                    <li>Info</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="button-area">                
+                <button type="button" id="button">Random Magic Item</button>
+            </div>
+            <div id="dropdownLabel" class="text">
+                <label for="raritySelect">Choose a rarity (optional)</label>
+            </div>
+            <div id="dropdown" class="text">                
+                <select name="rarity" id="raritySelect">
+                    <option value="">All</option>
+                    <option value="common">Common</option>
+                    <option value="uncommon">Uncommon</option>
+                    <option value="rare">Rare</option>
+                    <option value="veryRare">Very Rare</option>
+                    <option value="legendary">Legendary</option>
+                    <option value="artifact">Artifact</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class = randomItemDisplay>
+                <h1 class = text>
+                    <span id="name"></span><br />
+                </h1>
+                <p class = text>
+                    <span id="desc"></span>
+                </p>                
+            </div>
+        </main>
+    </body>
+</html>
