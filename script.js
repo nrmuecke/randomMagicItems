@@ -1,10 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-
-    const magicItems = "https://www.dnd5eapi.co/api/magic-items"
     
-    var items = [];
-    var urls = [];
+    const magicItemsData = "magicitems.json"
     var commonItems = [];
     var uncommonItems = [];
     var rareItems = [];
@@ -14,62 +11,131 @@ document.addEventListener('DOMContentLoaded', function() {
     var otherItems = [];
 
     async function getMagicItems() {
-        const response = await fetch(magicItems);
-        const data = await response.json();
+        const response = await fetch(magicItemsData);
+        const magicItems = await response.json();
 
-        for (var i in data.results) {
-            urls.push([i, data.results[i]]);
-        }
 
-        const randomNumber = Math.floor(Math.random() * urls.length);
+        var dropdownValue = document.getElementById("raritySelect").value;
 
-        // find that item and get it's url
-        var randomItem = urls[randomNumber];
-        var magicItemUrl = randomItem[1].url;
+        if (dropdownValue === "") {
+            const randomNumber = Math.floor(Math.random() * magicItems.length);
 
-        // console.log(items);
+            var randomItem = magicItems[randomNumber];
 
-        // use that magic item url to get our random item from the api
-        var randomItemUrl = "https://www.dnd5eapi.co" + magicItemUrl;
+                var { name, desc, rarity } = randomItem;
 
-        async function getRandomItem() {
-            var random = await fetch(randomItemUrl);
-            var randomItem = await random.json();
-
-            // console.log(finalItem);
-            
-            // grab the name and description and send it to our html page
-            const { name, desc } = randomItem;
-
-            document.getElementById("name").textContent = name;
-            document.getElementById("desc").textContent = desc;
-        }
-        getRandomItem();
-
-            for (var i in urls) {
-                var itemUrl = "https://www.dnd5eapi.co" + urls[i][1].url;
-                var itemResponse = await fetch(itemUrl);
-                var itemData = await itemResponse.json();
-
-                items.push(itemData);
-                
-                if (itemData.rarity.name === "Common") {
-                    commonItems.push(itemData);
-                } else if (itemData.rarity.name === "Uncommon") {
-                    uncommonItems.push(itemData);
-                } else if (itemData.rarity.name === "Rare") {
-                    rareItems.push(itemData);
-                } else if (itemData.rarity.name === "Very Rare") {
-                    veryRareItems.push(itemData);
-                } else if (itemData.rarity.name === "Legendary") {
-                    legendaryItems.push(itemData);
-                } else if (itemData.rarity.name === "Artifact") {
-                    artifacts.push(itemData);
-                } else {
-                    otherItems.push(itemData);
+                document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("desc").textContent = desc
+        } else if (dropdownValue === "common") {
+            for (var i = 0; i < magicItems.length; i++) {
+                if (magicItems[i].rarity === "common") {
+                    commonItems.push(magicItems[i]);
                 }
             }
-    }
+            const randomNumber = Math.floor(Math.random() * commonItems.length);
+
+            var randomItem = commonItems[randomNumber];
+
+                var { name, desc, rarity } = randomItem;
+
+                document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("desc").textContent = desc
+        } else if (dropdownValue === "uncommon") {
+            for (var i = 0; i < magicItems.length; i++) {
+                if (magicItems[i].rarity === "uncommon") {
+                    uncommonItems.push(magicItems[i]);
+                }
+            }
+            const randomNumber = Math.floor(Math.random() * uncommonItems.length);
+
+            var randomItem = uncommonItems[randomNumber];
+
+
+                var { name, desc, rarity } = randomItem;
+
+                document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("desc").textContent = desc
+        } else if (dropdownValue === "rare") {
+            for (var i = 0; i < magicItems.length; i++) {
+                if (magicItems[i].rarity === "rare") {
+                    rareItems.push(magicItems[i]);
+                }
+            } 
+            const randomNumber = Math.floor(Math.random() * rareItems.length);
+
+            var randomItem = rareItems[randomNumber];
+
+                var { name, desc, rarity } = randomItem;
+
+                document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("desc").textContent = desc
+        } else if (dropdownValue === "veryRare") {
+            for (var i = 0; i < magicItems.length; i++) {
+                if (magicItems[i].rarity === "very rare") {
+                    veryRareItems.push(magicItems[i]);
+                }
+            }
+            const randomNumber = Math.floor(Math.random() * veryRareItems.length);
+
+            var randomItem = veryRareItems[randomNumber];
+
+                var { name, desc, rarity } = randomItem;
+
+                document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("desc").textContent = desc
+        } else if (dropdownValue === "legendary") {
+            for (var i = 0; i < magicItems.length; i++) {
+                if (magicItems[i].rarity === "legendary") {
+                    legendaryItems.push(magicItems[i]);
+                }
+            }
+            const randomNumber = Math.floor(Math.random() * legendaryItems.length);
+
+            var randomItem = legendaryItems[randomNumber];
+
+                var { name, desc, rarity } = randomItem;
+
+                document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("desc").textContent = desc
+        } else if (dropdownValue === "artifact") {
+            for (var i = 0; i < magicItems.length; i++) {
+                if (magicItems[i].rarity === "artifact") {
+                    artifacts.push(magicItems[i]);
+                }
+            }
+            const randomNumber = Math.floor(Math.random() * artifacts.length);
+
+            var randomItem = artifacts[randomNumber];
+
+                var { name, desc, rarity } = randomItem;
+
+                document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("desc").textContent = desc
+        } else if (dropdownValue === "other") {
+            for (var i = 0; i < magicItems.length; i++) {
+                if (magicItems[i].rarity === "varies") {
+                    otherItems.push(magicItems[i]);
+                }
+            }
+            const randomNumber = Math.floor(Math.random() * otherItems.length);
+
+            var randomItem = otherItems[randomNumber];
+
+                var { name, desc, rarity } = randomItem;
+
+                document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("desc").textContent = desc
+        }
+    } 
+
     const button = document.getElementById("button");
 
     button.addEventListener("click", function() {

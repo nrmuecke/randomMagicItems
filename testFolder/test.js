@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     const magicItemsData = "magicitems.json"
-    var magicItems = [];
     var commonItems = [];
     var uncommonItems = [];
     var rareItems = [];
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 var { name, desc, rarity } = randomItem;
 
                 document.getElementById("name").textContent = name
-                document.getElementById("rarity").textContent = rarity
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "common") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -38,9 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var randomItem = commonItems[randomNumber];
 
-                var { name, desc } = randomItem;
+                var { name, desc, rarity } = randomItem;
 
                 document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "uncommon") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -53,9 +53,10 @@ document.addEventListener('DOMContentLoaded', function() {
             var randomItem = uncommonItems[randomNumber];
 
 
-                var { name, desc } = randomItem;
+                var { name, desc, rarity } = randomItem;
 
                 document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "rare") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -67,9 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var randomItem = rareItems[randomNumber];
 
-                var { name, desc } = randomItem;
+                var { name, desc, rarity } = randomItem;
 
                 document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "veryRare") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -81,9 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var randomItem = veryRareItems[randomNumber];
 
-                var { name, desc } = randomItem;
+                var { name, desc, rarity } = randomItem;
 
                 document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "legendary") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -95,9 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var randomItem = legendaryItems[randomNumber];
 
-                var { name, desc } = randomItem;
+                var { name, desc, rarity } = randomItem;
 
                 document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "artifact") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -109,9 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var randomItem = artifacts[randomNumber];
 
-                var { name, desc } = randomItem;
+                var { name, desc, rarity } = randomItem;
 
                 document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "other") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -123,9 +128,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var randomItem = otherItems[randomNumber];
 
-                var { name, desc } = randomItem;
+                var { name, desc, rarity } = randomItem;
 
                 document.getElementById("name").textContent = name
+                document.getElementById("rarity").textContent = rarity.toUpperCase();
                 document.getElementById("desc").textContent = desc
         }
     } 
