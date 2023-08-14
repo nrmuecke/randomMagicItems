@@ -24,31 +24,33 @@
         </header>
         <main>
             <div id="button-area">                
-                <button type="button" id="button">Random Magic Item</button>
+                <button type="button" id="button" class="button">Random Magic Item</button>
             </div>
             <div id="dropdownLabel" class="text">
                 <label for="raritySelect">Choose a rarity (optional)</label>
             </div>
-            <div id="dropdown" class="text">                
-                <select name="rarity" id="raritySelect">
-                    <option value="">All</option>
-                    <option value="common">Common</option>
-                    <option value="uncommon">Uncommon</option>
-                    <option value="rare">Rare</option>
-                    <option value="veryRare">Very Rare</option>
-                    <option value="legendary">Legendary</option>
-                    <option value="artifact">Artifact</option>
-                    <option value="other">Other</option>
-                </select>
+            <div class="container">
+                <div class="select">                
+                    <select name="rarity" id="raritySelect">
+                        <option class="allSelect" value="">All</option>
+                        <option class="commonSelect" value="common" style="color:brown">Common</option>
+                        <option class="uncommonSelect" value="uncommon" style="color:orange">Uncommon</option>
+                        <option class="rareSelect" value="rare" style="color:yellow">Rare</option>
+                        <option class="veryRareSelect" value="veryRare" style="color:green">Very Rare</option>
+                        <option class="legendarySelect" value="legendary" style="color:blue">Legendary</option>
+                        <option class="artifactSelect" value="artifact" style="color:purple">Artifact</option>
+                        <option class="variesSelect" value="varies">Varies</option>
+                    </select>
+                </div>
             </div>
-            <div class = randomItemDisplay>
-                <h1 class = text>
+            <div class="itemDisplay">
+                <h1 class="text" id="itemName">
                     <span id="name"></span><br />
                 </h1>
-                <h3 class = text>
+                <h3 class="text">
                     <span id="rarity"></span>
                 </h3>
-                <p class = text>
+                <p class="text">
                     <span id="desc"></span>
                 </p>                
             </div>

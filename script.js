@@ -27,6 +27,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("name").textContent = name
                 document.getElementById("rarity").textContent = rarity.toUpperCase();
                 document.getElementById("desc").textContent = desc
+                if (document.getElementById("rarity").textContent === "COMMON") {
+                    document.getElementById("name").style.color = "brown";
+                } else if (document.getElementById("rarity").textContent === "UNCOMMON") {
+                    document.getElementById("name").style.color = "orange";
+                } else if (document.getElementById("rarity").textContent === "RARE") {
+                    document.getElementById("name").style.color = "yellow";
+                } else if (document.getElementById("rarity").textContent === "VERY RARE") {
+                    document.getElementById("name").style.color = "green";
+                } else if (document.getElementById("rarity").textContent === "LEGENDARY") {
+                    document.getElementById("name").style.color = "blue";
+                } else if (document.getElementById("rarity").textContent === "ARTIFACT") {
+                    document.getElementById("name").style.color = "purple";
+                } else {
+                    document.getElementById("name").style.color = "white";
+                }
         } else if (dropdownValue === "common") {
             for (var i = 0; i < magicItems.length; i++) {
                 if (magicItems[i].rarity === "common") {
@@ -41,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 document.getElementById("name").textContent = name
                 document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("name").style.color = "brown";
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "uncommon") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -57,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 document.getElementById("name").textContent = name
                 document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("name").style.color = "orange";
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "rare") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -72,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 document.getElementById("name").textContent = name
                 document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("name").style.color = "yellow";
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "veryRare") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -87,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 document.getElementById("name").textContent = name
                 document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("name").style.color = "green";
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "legendary") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -102,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 document.getElementById("name").textContent = name
                 document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("name").style.color = "blue";
                 document.getElementById("desc").textContent = desc
         } else if (dropdownValue === "artifact") {
             for (var i = 0; i < magicItems.length; i++) {
@@ -117,8 +137,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 document.getElementById("name").textContent = name
                 document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("name").style.color = "purple";
                 document.getElementById("desc").textContent = desc
-        } else if (dropdownValue === "other") {
+        } else if (dropdownValue === "varies") {
             for (var i = 0; i < magicItems.length; i++) {
                 if (magicItems[i].rarity === "varies") {
                     otherItems.push(magicItems[i]);
@@ -132,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 document.getElementById("name").textContent = name
                 document.getElementById("rarity").textContent = rarity.toUpperCase();
+                document.getElementById("name").style.color = "white";
                 document.getElementById("desc").textContent = desc
         }
     } 
