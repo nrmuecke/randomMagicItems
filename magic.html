@@ -26,6 +26,21 @@
             <div id="button-area">                
                 <button type="button" id="button">Random Magic Item</button>
             </div>
+            <div id="dropdownLabel" class="text">
+                <label for="raritySelect">Choose a rarity (optional)</label>
+            </div>
+            <div id="dropdown" class="text">                
+                <select name="rarity" id="raritySelect">
+                    <option value="">All</option>
+                    <option value="common">Common</option>
+                    <option value="uncommon">Uncommon</option>
+                    <option value="rare">Rare</option>
+                    <option value="veryRare">Very Rare</option>
+                    <option value="legendary">Legendary</option>
+                    <option value="artifact">Artifact</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
             <div class = randomItemDisplay>
                 <h1 class = text>
                     <span id="name"></span><br />

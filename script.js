@@ -2,70 +2,77 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const magicItems = "https://www.dnd5eapi.co/api/magic-items"
+    
+    var items = [];
+    var urls = [];
+    var commonItems = [];
+    var uncommonItems = [];
+    var rareItems = [];
+    var veryRareItems = [];
+    var legendaryItems = [];
+    var artifacts = [];
+    var otherItems = [];
 
-// function to be ran on button click
-    // grab the json data from the above link
     async function getMagicItems() {
         const response = await fetch(magicItems);
         const data = await response.json();
 
-        // console.log(data);
-        
-        // create an array and fill it with the items from the json data so that we can use math.random
-        var items = [];
-        // var actualItems = [];
-
         for (var i in data.results) {
-            items.push([i, data.results[i]]);
+            urls.push([i, data.results[i]]);
         }
 
-        // for (var i in items) {
-        //     var itemUrl = items[i][1].url;
-        //     var actualItemUrl = "https://www.dnd5eapi.co" + itemUrl;
-
-        //     async function getActualItem() {
-        //         var response = await fetch(actualItemUrl);
-        //         var actualItem = await response.json();
-        //         actualItems.push(i, actualItem.results[i]);
-        //     }
-        // }
-
-        console.log(items[5]);
-
-        // get a random index number from the array
-        const randomNumber = Math.floor(Math.random() * items.length);
+        const randomNumber = Math.floor(Math.random() * urls.length);
 
         // find that item and get it's url
-        var randomItem = items[randomNumber];
+        var randomItem = urls[randomNumber];
         var magicItemUrl = randomItem[1].url;
 
         // console.log(items);
 
         // use that magic item url to get our random item from the api
-        var finalItemUrl = "https://www.dnd5eapi.co" + magicItemUrl;
+        var randomItemUrl = "https://www.dnd5eapi.co" + magicItemUrl;
 
-        async function getFinalItem() {
-            var response = await fetch(finalItemUrl);
-            var finalItem = await response.json();
+        async function getRandomItem() {
+            var random = await fetch(randomItemUrl);
+            var randomItem = await random.json();
 
             // console.log(finalItem);
             
             // grab the name and description and send it to our html page
-            const { name, desc } = finalItem;
+            const { name, desc } = randomItem;
 
-            document.getElementById("name").textContent = name
-            document.getElementById("desc").textContent = desc
+            document.getElementById("name").textContent = name;
+            document.getElementById("desc").textContent = desc;
         }
+        getRandomItem();
 
-        getFinalItem();
-        // getActualItem();
-        // console.log(actualItems);
-        
+            for (var i in urls) {
+                var itemUrl = "https://www.dnd5eapi.co" + urls[i][1].url;
+                var itemResponse = await fetch(itemUrl);
+                var itemData = await itemResponse.json();
+
+                items.push(itemData);
+                
+                if (itemData.rarity.name === "Common") {
+                    commonItems.push(itemData);
+                } else if (itemData.rarity.name === "Uncommon") {
+                    uncommonItems.push(itemData);
+                } else if (itemData.rarity.name === "Rare") {
+                    rareItems.push(itemData);
+                } else if (itemData.rarity.name === "Very Rare") {
+                    veryRareItems.push(itemData);
+                } else if (itemData.rarity.name === "Legendary") {
+                    legendaryItems.push(itemData);
+                } else if (itemData.rarity.name === "Artifact") {
+                    artifacts.push(itemData);
+                } else {
+                    otherItems.push(itemData);
+                }
+            }
     }
     const button = document.getElementById("button");
 
     button.addEventListener("click", function() {
         getMagicItems();
-    })
-
+    })  
 });
