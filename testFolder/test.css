@@ -129,6 +129,8 @@ select {
   .select {
     position: relative;
     display: flex;
+    text-align: center;
+    margin: auto;
     width: 13em;
     height: 3em;
     border-radius: .25em;
@@ -151,11 +153,7 @@ select {
   }
 
   .container {
-    position : absolute;
-    top: 35%;
-    left : 50%;
-    transform :
-    translate(-50%,-50%); 
+    padding-top: 5px;
   }
 
 
