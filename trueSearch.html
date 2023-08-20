@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Dungeons and Dragons Magic Items Randomizer" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Miki's Magics</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="header">
+            <!--Upper left corner header-->
+            <h4 class="corner-head"><a href="magic.html">Random Magic Items</a></h4>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="info.html">Info</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1 id="listHead" class="text">Magic Items List</h1>
+            <div id="inputContainer">
+                <input type="text" id="input" onkeyup="search()" placeholder="Search Magic Items..">
+            </div>
+            <div id="itemsContainer">
+                <ul id="itemsList" class="text"></ul>
+            </div>
+        </main>
+        <script>
+            const magicItemsData = "magicitems.json"
+            async function itemsList() {
+                const response = await fetch(magicItemsData);
+                const magicItems = await response.json();
+
+
+                var list = document.getElementById("itemsList");
+                for (i = 0; i < magicItems.length; ++i) {
+                    var li = document.createElement('li');
+                    var itemNames = magicItems[i].name;
+                    li.innerText = itemNames + ": " + magicItems[i].desc;
+                    list.appendChild(li);
+                }
+            }
+            function search() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("input");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("itemsList");
+                li = ul.getElementsByTagName("li");
+
+                for (i = 0; i < li.length; i++) {
+                    txtValue = li[i].textContent || li[i].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+            itemsList();
+        </script>
+    </body>
+</html>

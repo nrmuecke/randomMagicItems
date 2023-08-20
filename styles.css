@@ -53,16 +53,16 @@ nav > ul {
 }
 
 #button {
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 #dropdownLabel {
-    padding-top: 64px;
+    padding-top: 44px;
     margin: auto;
 }
 
 .itemDisplay {
-    padding-top: 75px;
+    padding-top: 15px;
     margin: auto
 }
 
@@ -156,5 +156,59 @@ select {
     padding-top: 5px;
   }
 
+  #searchContainer {
+    padding-top: 20px;
+    text-align: center;
+  }
 
+  #input {
+    width: 190px;
+    height: 30px;
+  }
+
+  #listHead {
+    padding-top: 100px;
+  }
+
+#itemsList {
+    list-style: none;
+}
+
+#itemsList li {
+    padding-top: 10px;
+}
+
+#itemsContainer {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+#inputContainer {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#orContainer {
+    margin-top: -5px;
+}
+
+#searchLinkContainer {
+    text-align: center;
+    margin-top: -5px;
+}
   
+#infoBody {
+    padding-top: 150px;
+}
+
+#credits {
+    padding-top: 25px;
+}
+
+#contact {
+    padding-top: 25px;
+}
