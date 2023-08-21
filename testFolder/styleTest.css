@@ -17,7 +17,7 @@ header {
     width: 100%;
     height: 50px;
     display: flex;
-    background-color: #00FFFF;
+    background-color: #00001a;
     justify-content: space-between;
     position: fixed;
     margin: 0;
@@ -33,9 +33,29 @@ header {
     font-size: large
 }
 
+.corner-head a {
+    color: transparent;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
 #nav-bar {
     width: 50%;
-    max-width: 300px;
+    max-width: 200px;
     height: 50px;
 }
 
@@ -62,7 +82,6 @@ nav > ul {
 }
 
 .itemDisplay {
-    padding-top: 15px;
     margin: auto
 }
 
@@ -167,7 +186,27 @@ select {
   }
 
   #listHead {
+    max-width: 250px;
+    margin: auto;
     padding-top: 100px;
+    padding-bottom: 15px;
+    color: transparent;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
   }
 
 #itemsList {
@@ -200,4 +239,14 @@ a {
     text-align: center;
     margin-top: -5px;
 }
+
+#searchLink {
+    color: #66ccff;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
   
+#infoBody {
+    padding-top: 150px;
+}
