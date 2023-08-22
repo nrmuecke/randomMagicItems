@@ -29,6 +29,7 @@
         </main>
         <script>
             const magicItemsData = "magicitems.json"
+            // This function grabs the entire json file and displays the name and description of each item. It is called upon page load.
             async function itemsList() {
                 const response = await fetch(magicItemsData);
                 const magicItems = await response.json();
@@ -42,6 +43,7 @@
                     list.appendChild(li);
                 }
             }
+            // This function filters out the items based on what is typed in the search bar, it is called when a user begins typing in that bar.
             function search() {
                 var input, filter, ul, li, a, i, txtValue;
                 input = document.getElementById("input");
