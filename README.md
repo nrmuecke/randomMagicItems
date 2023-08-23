@@ -1,5 +1,5 @@
 # Random Magic Items
-#### Video Demo:  <URL HERE>
+#### Video Demo:  <https://youtu.be/AR8xw_SPFTA>
 #### Description:
 I created this website as a means for dungeon masters and players of the table top roleplaying game (ttrpg) Dungeons and Dragons to easily find magic items for their games, or to be able to quickly reference magic items. The main feature of this website is the Random Magic Item button. Click it and the name, rarity and description of a random item will be displayed. Currently there are over 1000 items that are pulled from which I got by downloading the json file from [Open5e](https://open5e.com/)'s github. So a big thanks to them for providing that information. I also plan to add more magic items in the future and possibly create a form for user's to submit magic items that they would like to see on the website.
 
