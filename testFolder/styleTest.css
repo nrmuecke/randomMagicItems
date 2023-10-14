@@ -259,3 +259,17 @@ select {
     left: 120px;
     bottom: 48px;
   }
+
+  @media (max-width: 525px) {
+    .select {
+        width: 9em;
+    }
+
+    #rarityContainer {
+        right: 77px;
+    }
+
+    #typeContainer {
+        left: 77px;
+    }
+  }
