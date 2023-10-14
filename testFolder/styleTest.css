@@ -33,6 +33,7 @@ header {
     font-size: large
 }
 
+/* I found this rainbow gradient on stack overflow */
 .corner-head a {
     color: transparent;
     background: linear-gradient(
@@ -70,10 +71,11 @@ nav > ul {
 
 #button-area {
     text-align: center;
+    margin-top: -20px;
 }
 
-#button {
-    margin-top: 150px;
+#title {
+    padding-top: 75px;
 }
 
 #dropdownLabel {
@@ -104,6 +106,84 @@ nav > ul {
     margin-top: -40px;
 }
 
+  #searchContainer {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  #input {
+    width: 190px;
+    height: 30px;
+  }
+
+  #listHead {
+    max-width: 250px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 15px;
+    color: transparent;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+#itemsList {
+    list-style: none;
+}
+
+#itemsList li {
+    padding-top: 10px;
+}
+
+#itemsContainer {
+    width: 90%;
+    margin: auto;
+}
+
+#inputContainer {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#orContainer {
+    margin-top: -10px;
+}
+
+#searchLinkContainer {
+    text-align: center;
+    margin-top: -5px;
+}
+
+#searchLink {
+    color: #66ccff;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+  
+#infoBody {
+    padding-top: 150px;
+    width: 80%;
+    margin: auto;
+}
+
+/* The following styles the main button and is from: copy-paste-css.com */
 .button {
     display: inline-block;
     outline: 0;
@@ -171,82 +251,11 @@ select {
     color: #0070f3;
   }
 
-  .container {
-    padding-top: 5px;
+  #rarityContainer {
+    right: 120px;
   }
 
-  #searchContainer {
-    padding-top: 20px;
-    text-align: center;
+  #typeContainer {
+    left: 120px;
+    bottom: 48px;
   }
-
-  #input {
-    width: 190px;
-    height: 30px;
-  }
-
-  #listHead {
-    max-width: 250px;
-    margin: auto;
-    padding-top: 100px;
-    padding-bottom: 15px;
-    color: transparent;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 154, 0, 1) 10%,
-        rgba(208, 222, 33, 1) 20%,
-        rgba(79, 220, 74, 1) 30%,
-        rgba(63, 218, 216, 1) 40%,
-        rgba(47, 201, 226, 1) 50%,
-        rgba(28, 127, 238, 1) 60%,
-        rgba(95, 21, 242, 1) 70%,
-        rgba(186, 12, 248, 1) 80%,
-        rgba(251, 7, 217, 1) 90%,
-        rgba(255, 0, 0, 1) 100%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-  }
-
-#itemsList {
-    list-style: none;
-}
-
-#itemsList li {
-    padding-top: 10px;
-}
-
-#itemsContainer {
-    width: 90%;
-    text-align: center;
-    margin: auto;
-}
-
-#inputContainer {
-    text-align: center;
-}
-
-a {
-    text-decoration: none;
-}
-
-#orContainer {
-    margin-top: -5px;
-}
-
-#searchLinkContainer {
-    text-align: center;
-    margin-top: -5px;
-}
-
-#searchLink {
-    color: #66ccff;
-    padding: 8px;
-    border: 1px solid white;
-    border-radius: 5px;
-}
-  
-#infoBody {
-    padding-top: 150px;
-}

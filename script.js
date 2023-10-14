@@ -1,209 +1,162 @@
 
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
         
-        // Creating variables for the arrays to be used later as well as the json file where we get our data from
-        const magicItemsData = "magicitems.json"
-        var commonItems = [];
-        var uncommonItems = [];
-        var rareItems = [];
-        var veryRareItems = [];
-        var legendaryItems = [];
-        var artifacts = [];
-        var otherItems = [];
-    
-        // This function creates an array from the json file based on the rarity chosen in the dropdown menu on the index page
-        // and then spits out a random magical item from that array. This button is called when the button is pressed.       
-        async function getMagicItems() {
-            const response = await fetch(magicItemsData);
-            const magicItems = await response.json();
-    
-            var dropdownValue = document.getElementById("raritySelect").value;
-    
-            // Check to see what dropdown value is chosen and then display items based on that choice
-            if (dropdownValue === "") {
+    // Creating variables for the arrays to be used later as well as the json file where we get our data from
+    const magicItemsData = "magicitems.json"
+    var commonItems = [];
+    var uncommonItems = [];
+    var rareItems = [];
+    var veryRareItems = [];
+    var legendaryItems = [];
+    var artifacts = [];
+    var otherItems = [];
 
-                // Create a random number based on the length of the array
-                const randomNumber = Math.floor(Math.random() * magicItems.length + 1);
-    
-                var randomItem = magicItems[randomNumber];
-    
-                    var { name, desc, rarity } = randomItem;
-    
-                    document.getElementById("name").textContent = name
-                    document.getElementById("rarity").textContent = rarity.toUpperCase();
-                    document.getElementById("desc").textContent = desc
+    // This function creates an array from the json file based on the rarity chosen in the dropdown menu on the index page
+    // and then spits out a random magical item from that array. This button is called when the button is pressed.       
+    async function getMagicItems() {
+        const response = await fetch(magicItemsData);
+        const magicItems = await response.json();
 
-                    // Sets the color of the name based on the rarity pulled
-                    if (document.getElementById("rarity").textContent === "COMMON") {
-                        document.getElementById("name").style.color = "brown";
-                    } else if (document.getElementById("rarity").textContent === "UNCOMMON") {
-                        document.getElementById("name").style.color = "orange";
-                    } else if (document.getElementById("rarity").textContent === "RARE") {
-                        document.getElementById("name").style.color = "yellow";
-                    } else if (document.getElementById("rarity").textContent === "VERY RARE") {
-                        document.getElementById("name").style.color = "green";
-                    } else if (document.getElementById("rarity").textContent === "LEGENDARY") {
-                        document.getElementById("name").style.color = "blue";
-                    } else if (document.getElementById("rarity").textContent === "ARTIFACT") {
-                        document.getElementById("name").style.color = "purple";
-                    } else {
-                        document.getElementById("name").style.color = "white";
-                    }
-            } else if (dropdownValue === "common") {
-                for (var i = 0; i < magicItems.length; i++) {
-                    if (magicItems[i].rarity === "common") {
-                        commonItems.push(magicItems[i]);
-                    }
-                }
-                const randomNumber = Math.floor(Math.random() * commonItems.length + 1);
-    
-                var randomItem = commonItems[randomNumber];
-    
-                    var { name, desc, rarity } = randomItem;
-    
-                    document.getElementById("name").textContent = name
-                    document.getElementById("rarity").textContent = rarity.toUpperCase();
-                    document.getElementById("name").style.color = "brown";
-                    document.getElementById("desc").textContent = desc
-            } else if (dropdownValue === "uncommon") {
-                for (var i = 0; i < magicItems.length; i++) {
-                    if (magicItems[i].rarity === "uncommon") {
-                        uncommonItems.push(magicItems[i]);
-                    }
-                }
-                const randomNumber = Math.floor(Math.random() * uncommonItems.length + 1);
-    
-                var randomItem = uncommonItems[randomNumber];
-    
-    
-                    var { name, desc, rarity } = randomItem;
-    
-                    document.getElementById("name").textContent = name
-                    document.getElementById("rarity").textContent = rarity.toUpperCase();
-                    document.getElementById("name").style.color = "orange";
-                    document.getElementById("desc").textContent = desc
-            } else if (dropdownValue === "rare") {
-                for (var i = 0; i < magicItems.length; i++) {
-                    if (magicItems[i].rarity === "rare") {
-                        rareItems.push(magicItems[i]);
-                    }
-                } 
-                const randomNumber = Math.floor(Math.random() * rareItems.length + 1);
-    
-                var randomItem = rareItems[randomNumber];
-    
-                    var { name, desc, rarity } = randomItem;
-    
-                    document.getElementById("name").textContent = name
-                    document.getElementById("rarity").textContent = rarity.toUpperCase();
-                    document.getElementById("name").style.color = "yellow";
-                    document.getElementById("desc").textContent = desc
-            } else if (dropdownValue === "veryRare") {
-                for (var i = 0; i < magicItems.length; i++) {
-                    if (magicItems[i].rarity === "very rare") {
-                        veryRareItems.push(magicItems[i]);
-                    }
-                }
-                const randomNumber = Math.floor(Math.random() * veryRareItems.length + 1);
-    
-                var randomItem = veryRareItems[randomNumber];
-    
-                    var { name, desc, rarity } = randomItem;
-    
-                    document.getElementById("name").textContent = name
-                    document.getElementById("rarity").textContent = rarity.toUpperCase();
-                    document.getElementById("name").style.color = "green";
-                    document.getElementById("desc").textContent = desc
-            } else if (dropdownValue === "legendary") {
-                for (var i = 0; i < magicItems.length; i++) {
-                    if (magicItems[i].rarity === "legendary") {
-                        legendaryItems.push(magicItems[i]);
-                    }
-                }
-                const randomNumber = Math.floor(Math.random() * legendaryItems.length + 1);
-    
-                var randomItem = legendaryItems[randomNumber];
-    
-                    var { name, desc, rarity } = randomItem;
-    
-                    document.getElementById("name").textContent = name
-                    document.getElementById("rarity").textContent = rarity.toUpperCase();
-                    document.getElementById("name").style.color = "blue";
-                    document.getElementById("desc").textContent = desc
-            } else if (dropdownValue === "artifact") {
-                for (var i = 0; i < magicItems.length; i++) {
-                    if (magicItems[i].rarity === "artifact") {
-                        artifacts.push(magicItems[i]);
-                    }
-                }
-                const randomNumber = Math.floor(Math.random() * artifacts.length + 1);
-    
-                var randomItem = artifacts[randomNumber];
-    
-                    var { name, desc, rarity } = randomItem;
-    
-                    document.getElementById("name").textContent = name
-                    document.getElementById("rarity").textContent = rarity.toUpperCase();
-                    document.getElementById("name").style.color = "purple";
-                    document.getElementById("desc").textContent = desc
-            } else if (dropdownValue === "varies") {
-                for (var i = 0; i < magicItems.length; i++) {
-                    if (magicItems[i].rarity === "varies") {
-                        otherItems.push(magicItems[i]);
-                    }
-                }
-                const randomNumber = Math.floor(Math.random() * otherItems.length + 1);
-    
-                var randomItem = otherItems[randomNumber];
-    
-                    var { name, desc, rarity } = randomItem;
-    
-                    document.getElementById("name").textContent = name
-                    document.getElementById("rarity").textContent = rarity.toUpperCase();
-                    document.getElementById("name").style.color = "white";
-                    document.getElementById("desc").textContent = desc
-            }
-        } 
-    
-        // This function gets the length of each magic item array based on rarity and displays that number next to each choice in the dropdown.
-        // It is called upon page load.
-        async function getMagicItemsLength() {
-            const response = await fetch(magicItemsData);
-            const magicItems = await response.json();
-    
+        var raritySelect = document.getElementById("raritySelect").value;
+        var typeSelect = document.getElementById("typeSelect").value;
+        // empty array for use whenever a dropdown rarity or type is selected
+        var items = [];
+
+        // if no dropdown is selected then pull an item from the entire list
+        if (raritySelect === "" && typeSelect === "") {
+
+            // Create a random number based on the length of the array
+            const randomNumber = Math.floor(Math.random() * magicItems.length + 1);
+
+            var randomItem = magicItems[randomNumber];
+
+            var { name, desc, rarity, type } = randomItem;
+
+            document.getElementById("name").textContent = name
+            document.getElementById("rarity").textContent = rarity.toUpperCase();
+            document.getElementById("type").textContent = type.toUpperCase();
+            document.getElementById("desc").textContent = desc
+        // if a rarity is chosen but no type is chosen
+        } else if (raritySelect !== "" && typeSelect === "") {
             for (var i = 0; i < magicItems.length; i++) {
-                if (magicItems[i].rarity === "common") {
-                    commonItems.push(magicItems[i]);
-                } else if (magicItems[i].rarity === "uncommon") {
-                    uncommonItems.push(magicItems[i]);
-                } else if (magicItems[i].rarity === "rare") {
-                    rareItems.push(magicItems[i]);
-                } else if (magicItems[i].rarity === "very rare") {
-                    veryRareItems.push(magicItems[i]);
-                } else if (magicItems[i].rarity === "legendary") {
-                    legendaryItems.push(magicItems[i]);
-                } else if (magicItems[i].rarity === "artifact") {
-                    artifacts.push(magicItems[i]);
-                } else if (magicItems[i].rarity === "varies") {
-                    otherItems.push(magicItems[i]);
+                if (magicItems[i].rarity === raritySelect) {
+                    items.push(magicItems[i]);
                 }
             }
-    
-            document.getElementById("all").textContent = "All (" + magicItems.length + ")";
-            document.getElementById("common").textContent = "Common (" + commonItems.length + ")";
-            document.getElementById("uncommon").textContent = "Uncommon (" + uncommonItems.length + ")";
-            document.getElementById("rare").textContent = "Rare (" + rareItems.length + ")";
-            document.getElementById("veryRare").textContent = "Very Rare (" + veryRareItems.length + ")";
-            document.getElementById("legendary").textContent = "Legendary (" + legendaryItems.length + ")";
-            document.getElementById("artifact").textContent = "Artifact (" + artifacts.length + ")";
-            document.getElementById("varies").textContent = "Varies (" + otherItems.length + ")";
+            const randomNumber = Math.floor(Math.random() * items.length);
+
+            var randomItem = items[randomNumber];
+            var { name, desc, rarity, type } = randomItem;
+
+            document.getElementById("name").textContent = name;
+            document.getElementById("rarity").textContent = rarity.toUpperCase();
+            document.getElementById("type").textContent = type.toUpperCase();
+            document.getElementById("desc").textContent = desc;
+        // if no rarity is chosen but a type is chosen
+        } else if (raritySelect === "" && typeSelect !== "") {
+            for (var i = 0; i < magicItems.length; i++) {
+                if (magicItems[i].type === typeSelect) {
+                    items.push(magicItems[i]);
+                }
+            }
+            const randomNumber = Math.floor(Math.random() * items.length);
+
+            var randomItem = items[randomNumber];
+            var { name, desc, rarity, type } = randomItem;
+
+            document.getElementById("name").textContent = name;
+            document.getElementById("rarity").textContent = rarity.toUpperCase();
+            document.getElementById("type").textContent = type.toUpperCase();
+            document.getElementById("desc").textContent = desc;
+        // if a rarity and a type are chosen
+        } else {
+            for (var i = 0; i < magicItems.length; i++) {
+                if (magicItems[i].rarity === raritySelect && magicItems[i].type === typeSelect) {
+                    items.push(magicItems[i]);
+                }
+            }
+            const randomNumber = Math.floor(Math.random() * items.length);
+
+            var randomItem = items[randomNumber];
+            var { name, desc, rarity, type } = randomItem;
+
+            document.getElementById("name").textContent = name;
+            document.getElementById("rarity").textContent = rarity.toUpperCase();
+            document.getElementById("type").textContent = type.toUpperCase();
+            document.getElementById("desc").textContent = desc;
         }
+        var pulledRarity = document.getElementById("rarity").textContent;
+        switch(pulledRarity) {
+        case "COMMON" :
+            document.getElementById("name").style.color = "brown";
+            break;
+        case "UNCOMMON" :
+            document.getElementById("name").style.color = "orange";
+            break;
+        case "RARE" :
+            document.getElementById("name").style.color = "yellow";
+            break;
+        case "VERY RARE" :
+            document.getElementById("name").style.color = "green";
+            break;
+        case "LEGENDARY" :
+            document.getElementById("name").style.color = "blue";
+            break;
+        case "ARTIFACT" :
+            document.getElementById("name").style.color = "purple";
+            break;
+        default :
+            document.getElementById("name").style.color = "white";
+        }
+    } 
+
+    // This function gets the length of each magic item array based on rarity and displays that number next to each choice in the dropdown.
+    // It is called upon page load.
+    // async function getMagicItemsLength() {
+    //     const response = await fetch(magicItemsData);
+    //     const magicItems = await response.json();
+
+    //     for (var i = 0; i < magicItems.length; i++) {
+    //         var itemRarity = magicItems[i].rarity;
+    //         switch(itemRarity) {
+    //         case "common" :
+    //             commonItems.push(magicItems[i]);
+    //             break;
+    //         case "uncommon" :
+    //             uncommonItems.push(magicItems[i]);
+    //             break;
+    //         case "rare" :
+    //             rareItems.push(magicItems[i]);
+    //             break;
+    //         case "very rare" :
+    //             veryRareItems.push(magicItems[i]);
+    //             break;
+    //         case "legendary" :
+    //             legendaryItems.push(magicItems[i]);
+    //             break;
+    //         case "artifact" :
+    //             artifacts.push(magicItems[i]);
+    //             break;
+    //         default :
+    //             otherItems.push(magicItems[i]);
+    //         }
+    //     }
+
+    //     document.getElementById("all").textContent = "All Rarities";
+    //     document.getElementById("common").textContent = "Common (" + commonItems.length + ")";
+    //     document.getElementById("uncommon").textContent = "Uncommon (" + uncommonItems.length + ")";
+    //     document.getElementById("rare").textContent = "Rare (" + rareItems.length + ")";
+    //     document.getElementById("veryRare").textContent = "Very Rare (" + veryRareItems.length + ")";
+    //     document.getElementById("legendary").textContent = "Legendary (" + legendaryItems.length + ")";
+    //     document.getElementById("artifact").textContent = "Artifact (" + artifacts.length + ")";
+    //     document.getElementById("varies").textContent = "Varies (" + otherItems.length + ")";
+    // }
+
     
-        
-        getMagicItemsLength();
-        const button = document.getElementById("button");
-    
-        button.addEventListener("click", function() {
-            getMagicItems();
-        })  
-    });
+    // getMagicItemsLength();
+    // const button = document.getElementById("button");
+
+    button.addEventListener("click", function() {
+        getMagicItems();
+    })  
+});

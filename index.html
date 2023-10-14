@@ -21,25 +21,37 @@
         </header>
         <main>
             <h1 class="text" id="title">Magic Items Randomizer for D&D 5E</h1>
-            <div id="button-area">                
-                <button type="button" id="button" class="button">Random Magic Item</button>
-            </div>
-            <div id="dropdownLabel" class="text">
-                <label for="raritySelect">Choose a rarity (optional)</label>
-            </div>
-            <div class="container">
-                <div class="select">                
+            <div class="selectContainer">
+                <div class="select" id="rarityContainer">                
                     <select name="rarity" id="raritySelect">
-                        <option id="all" class="allSelect" value="">All</option>
+                        <option id="all" class="allSelect" value="">Any Rarity</option>
                         <option id="common" class="commonSelect" value="common" style="color:brown">Common</option>
                         <option id="uncommon" class="uncommonSelect" value="uncommon" style="color:orange">Uncommon</option>
                         <option id="rare" class="rareSelect" value="rare" style="color:yellow">Rare</option>
-                        <option id="veryRare" class="veryRareSelect" value="veryRare" style="color:green">Very Rare</option>
+                        <option id="veryRare" class="veryRareSelect" value="very rare" style="color:green">Very Rare</option>
                         <option id="legendary" class="legendarySelect" value="legendary" style="color:blue">Legendary</option>
                         <option id="artifact" class="artifactSelect" value="artifact" style="color:purple">Artifact</option>
                         <option id="varies" class="variesSelect" value="varies">Varies</option>
                     </select>
                 </div>
+                <div class="select" id="typeContainer">                
+                    <select name="rarity" id="typeSelect">
+                        <option id="all" class="allSelect" value="">Any Type</option>
+                        <option id="weapon" value="Weapon">Weapon</option>
+                        <option id="scroll" value="Scroll">Scroll</option>
+                        <option id="wondrous" value="Wondrous item">Wondrous Item</option>
+                        <option id="armor" value="Armor">Armor</option>
+                        <option id="potion" value="Potion">Potion</option>
+                        <option id="wand" value="Wand">Wand</option>
+                        <option id="ammunition" value="Ammunition">Ammunition</option>
+                        <option id="rod" value="Rod">Rod</option>
+                        <option id="ring" value="Ring">Ring</option>
+                        <option id="staff" value="Staff">Staff</option>
+                    </select>
+                </div>
+            </div>
+            <div id="button-area">                
+                <button type="button" id="button" class="button">Random Magic Item</button>
             </div>
             <div id="orContainer">
                 <p class="text">or</p>
@@ -53,6 +65,9 @@
                 </h1>
                 <h3 class="text">
                     <span id="rarity"></span>
+                </h3>
+                <h3 class="text">
+                    <span id="type"></span>
                 </h3>
                 <p class="text">
                     <span id="desc"></span>

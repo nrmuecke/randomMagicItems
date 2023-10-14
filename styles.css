@@ -71,10 +71,11 @@ nav > ul {
 
 #button-area {
     text-align: center;
+    margin-top: -20px;
 }
 
 #title {
-    padding-top: 50px;
+    padding-top: 75px;
 }
 
 #dropdownLabel {
@@ -104,10 +105,6 @@ nav > ul {
 #dropdown {
     margin-top: -40px;
 }
-
-  .container {
-    padding-top: 5px;
-  }
 
   #searchContainer {
     padding-top: 20px;
@@ -186,8 +183,7 @@ a {
     margin: auto;
 }
 
-
-/* The following from here to the end of the page styles the main button and is from: copy-paste-css.com */
+/* The following styles the main button and is from: copy-paste-css.com */
 .button {
     display: inline-block;
     outline: 0;
@@ -253,4 +249,13 @@ select {
   /* Transition */
   .select:hover::after {
     color: #0070f3;
+  }
+
+  #rarityContainer {
+    right: 120px;
+  }
+
+  #typeContainer {
+    left: 120px;
+    bottom: 48px;
   }
