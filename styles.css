@@ -260,6 +260,14 @@ select {
     bottom: 48px;
   }
 
+.hideItems {
+    display: none;
+}
+
+.showItems {
+    display: block;    
+}
+
   @media (max-width: 525px) {
     .select {
         width: 9em;
