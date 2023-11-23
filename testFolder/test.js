@@ -3,20 +3,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
     // Creating variables for the arrays to be used later as well as the json file where we get our data from
     const magicItemsData = "test.json"
-    var commonItems = [];
-    var uncommonItems = [];
-    var rareItems = [];
-    var veryRareItems = [];
-    var legendaryItems = [];
-    var artifacts = [];
-    var otherItems = [];
 
     // This function creates an array from the json file based on the rarity chosen in the dropdown menu on the index page
     // and then spits out a random magical item from that array. This button is called when the button is pressed.       
     async function getMagicItems() {
+        // Hide searched items in case the search function was used and also show the random item display
+        document.getElementById("itemsList").className = "text hideItems";
+        document.getElementById("itemDisplay").className = "text showItems";
+
         const response = await fetch(magicItemsData);
         const magicItems = await response.json();
 
+        // variables for dropdown selections
         var raritySelect = document.getElementById("raritySelect").value;
         var typeSelect = document.getElementById("typeSelect").value;
         // empty array for use whenever a dropdown rarity or type is selected
@@ -130,6 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Filters out the items based on what is typed in the search bar, it is called when a user begins typing in that bar.
     document.getElementById("input").addEventListener("keyup", search);
     function search() {
+        //clear random item display if there happens to be one
+        document.getElementById("itemDisplay").className = "text hideItems";
+
         var input, filter, ul, li, i, txtValue;
         input = document.getElementById("input");
         filter = input.value.toUpperCase();

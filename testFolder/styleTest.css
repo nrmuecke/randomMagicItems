@@ -83,16 +83,12 @@ nav > ul {
     margin: auto;
 }
 
-.itemDisplay {
-    margin: auto
-}
-
 .text {
     color: white;
     text-align: center;
 }
 
-.itemDisplay {
+#itemDisplay {
     margin-left: auto;
     margin-right: auto;
     width: 80%;

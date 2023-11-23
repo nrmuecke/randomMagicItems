@@ -83,16 +83,12 @@ nav > ul {
     margin: auto;
 }
 
-.itemDisplay {
-    margin: auto
-}
-
 .text {
     color: white;
     text-align: center;
 }
 
-.itemDisplay {
+#itemDisplay {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -105,11 +101,6 @@ nav > ul {
 #dropdown {
     margin-top: -40px;
 }
-
-  #searchContainer {
-    padding-top: 20px;
-    text-align: center;
-  }
 
   #input {
     width: 190px;

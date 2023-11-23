@@ -3,20 +3,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
     // Creating variables for the arrays to be used later as well as the json file where we get our data from
     const magicItemsData = "magicitems.json"
-    var commonItems = [];
-    var uncommonItems = [];
-    var rareItems = [];
-    var veryRareItems = [];
-    var legendaryItems = [];
-    var artifacts = [];
-    var otherItems = [];
 
     // This function creates an array from the json file based on the rarity chosen in the dropdown menu on the index page
     // and then spits out a random magical item from that array. This button is called when the button is pressed.       
     async function getMagicItems() {
+        // Hide searched items in case the search function was used and also show the random item display
+        document.getElementById("itemsList").className = "text hideItems";
+        document.getElementById("itemDisplay").className = "text showItems";
+
         const response = await fetch(magicItemsData);
         const magicItems = await response.json();
 
+        // variables for dropdown selections
         var raritySelect = document.getElementById("raritySelect").value;
         var typeSelect = document.getElementById("typeSelect").value;
         // empty array for use whenever a dropdown rarity or type is selected
@@ -108,55 +106,50 @@ document.addEventListener('DOMContentLoaded', function() {
         default :
             document.getElementById("name").style.color = "white";
         }
-    } 
-
-    // This function gets the length of each magic item array based on rarity and displays that number next to each choice in the dropdown.
-    // It is called upon page load.
-    // async function getMagicItemsLength() {
-    //     const response = await fetch(magicItemsData);
-    //     const magicItems = await response.json();
-
-    //     for (var i = 0; i < magicItems.length; i++) {
-    //         var itemRarity = magicItems[i].rarity;
-    //         switch(itemRarity) {
-    //         case "common" :
-    //             commonItems.push(magicItems[i]);
-    //             break;
-    //         case "uncommon" :
-    //             uncommonItems.push(magicItems[i]);
-    //             break;
-    //         case "rare" :
-    //             rareItems.push(magicItems[i]);
-    //             break;
-    //         case "very rare" :
-    //             veryRareItems.push(magicItems[i]);
-    //             break;
-    //         case "legendary" :
-    //             legendaryItems.push(magicItems[i]);
-    //             break;
-    //         case "artifact" :
-    //             artifacts.push(magicItems[i]);
-    //             break;
-    //         default :
-    //             otherItems.push(magicItems[i]);
-    //         }
-    //     }
-
-    //     document.getElementById("all").textContent = "All Rarities";
-    //     document.getElementById("common").textContent = "Common (" + commonItems.length + ")";
-    //     document.getElementById("uncommon").textContent = "Uncommon (" + uncommonItems.length + ")";
-    //     document.getElementById("rare").textContent = "Rare (" + rareItems.length + ")";
-    //     document.getElementById("veryRare").textContent = "Very Rare (" + veryRareItems.length + ")";
-    //     document.getElementById("legendary").textContent = "Legendary (" + legendaryItems.length + ")";
-    //     document.getElementById("artifact").textContent = "Artifact (" + artifacts.length + ")";
-    //     document.getElementById("varies").textContent = "Varies (" + otherItems.length + ")";
-    // }
-
-    
-    // getMagicItemsLength();
-    // const button = document.getElementById("button");
-
+    }
     button.addEventListener("click", function() {
         getMagicItems();
     })  
+
+    // search function
+    async function itemsList() {
+        const response = await fetch(magicItemsData);
+        const magicItems = await response.json();
+
+        var list = document.getElementById("itemsList");
+        for (var i = 0; i < magicItems.length; ++i) {
+            var li = document.createElement('li');
+            var itemNames = magicItems[i].name;
+            li.innerText = itemNames + ": " + magicItems[i].desc;
+            list.appendChild(li);
+        }
+        document.getElementById("itemsList").className += " hideItems";
+    }
+    // Filters out the items based on what is typed in the search bar, it is called when a user begins typing in that bar.
+    document.getElementById("input").addEventListener("keyup", search);
+    function search() {
+        //clear random item display if there happens to be one
+        document.getElementById("itemDisplay").className = "text hideItems";
+
+        var input, filter, ul, li, i, txtValue;
+        input = document.getElementById("input");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("itemsList");
+        li = ul.getElementsByTagName("li");
+        ul.className = "showItems";
+
+        for (i = 0; i < li.length; i++) {
+            txtValue = li[i].textContent || li[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                document.getElementById("itemsList").className = "text showItems";
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+        if (document.getElementById("input").value === "") {
+            document.getElementById("itemsList").className = "text hideItems";
+        }
+    }
+    itemsList();
 });
