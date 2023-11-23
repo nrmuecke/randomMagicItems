@@ -108,55 +108,47 @@ document.addEventListener('DOMContentLoaded', function() {
         default :
             document.getElementById("name").style.color = "white";
         }
-    } 
-
-    // This function gets the length of each magic item array based on rarity and displays that number next to each choice in the dropdown.
-    // It is called upon page load.
-    // async function getMagicItemsLength() {
-    //     const response = await fetch(magicItemsData);
-    //     const magicItems = await response.json();
-
-    //     for (var i = 0; i < magicItems.length; i++) {
-    //         var itemRarity = magicItems[i].rarity;
-    //         switch(itemRarity) {
-    //         case "common" :
-    //             commonItems.push(magicItems[i]);
-    //             break;
-    //         case "uncommon" :
-    //             uncommonItems.push(magicItems[i]);
-    //             break;
-    //         case "rare" :
-    //             rareItems.push(magicItems[i]);
-    //             break;
-    //         case "very rare" :
-    //             veryRareItems.push(magicItems[i]);
-    //             break;
-    //         case "legendary" :
-    //             legendaryItems.push(magicItems[i]);
-    //             break;
-    //         case "artifact" :
-    //             artifacts.push(magicItems[i]);
-    //             break;
-    //         default :
-    //             otherItems.push(magicItems[i]);
-    //         }
-    //     }
-
-    //     document.getElementById("all").textContent = "All Rarities";
-    //     document.getElementById("common").textContent = "Common (" + commonItems.length + ")";
-    //     document.getElementById("uncommon").textContent = "Uncommon (" + uncommonItems.length + ")";
-    //     document.getElementById("rare").textContent = "Rare (" + rareItems.length + ")";
-    //     document.getElementById("veryRare").textContent = "Very Rare (" + veryRareItems.length + ")";
-    //     document.getElementById("legendary").textContent = "Legendary (" + legendaryItems.length + ")";
-    //     document.getElementById("artifact").textContent = "Artifact (" + artifacts.length + ")";
-    //     document.getElementById("varies").textContent = "Varies (" + otherItems.length + ")";
-    // }
-
-    
-    // getMagicItemsLength();
-    // const button = document.getElementById("button");
-
+    }
     button.addEventListener("click", function() {
         getMagicItems();
     })  
+
+    // search function
+    async function itemsList() {
+        const response = await fetch(magicItemsData);
+        const magicItems = await response.json();
+
+        var list = document.getElementById("itemsList");
+        for (var i = 0; i < magicItems.length; ++i) {
+            var li = document.createElement('li');
+            var itemNames = magicItems[i].name;
+            li.innerText = itemNames + ": " + magicItems[i].desc;
+            list.appendChild(li);
+        }
+        document.getElementById("itemsList").className += " hideItems";
+    }
+    // Filters out the items based on what is typed in the search bar, it is called when a user begins typing in that bar.
+    document.getElementById("input").addEventListener("keyup", search);
+    function search() {
+        var input, filter, ul, li, i, txtValue;
+        input = document.getElementById("input");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("itemsList");
+        li = ul.getElementsByTagName("li");
+        ul.className = "showItems";
+
+        for (i = 0; i < li.length; i++) {
+            txtValue = li[i].textContent || li[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                document.getElementById("itemsList").className = "text showItems";
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+        if (document.getElementById("input").value === "") {
+            document.getElementById("itemsList").className = "text hideItems";
+        }
+    }
+    itemsList();
 });
