@@ -3,7 +3,7 @@
 if($_POST) {
     $visitor_name = "";
     $visitor_email = "";
-    $email_title
+    $email_title = "";
     $visitor_message = "";
     $email_body = "<div>";
      
