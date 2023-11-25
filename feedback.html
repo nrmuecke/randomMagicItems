@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Dungeons and Dragons Magic Items Randomizer" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Random Magic Items</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="header">
+            <!--Upper left corner header-->
+            <h4 class="corner-head"><a href="index.html">Random Magic Items</a></h4>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a href="feedback.html">Feedback/Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form action="contact.php" method="post">
+                <div class="elem-group">              
+                  <label for="name" class="text">Your Name</label>              
+                  <input type="text" class="formField" id="formName" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>              
+                </div>              
+                <div class="elem-group">              
+                  <label for="email" class="text">Your E-mail</label>              
+                  <input type="email" class="formField" id="email" name="visitor_email" placeholder="john.doe@email.com" required>              
+                </div>                                   
+                <div class="elem-group">              
+                  <label for="message" class="text">Write your message</label>              
+                  <textarea id="message" class="formField" name="visitor_message" placeholder="Say whatever you want." required></textarea>              
+                </div>            
+                <button type="submit">Submit</button>              
+              </form>              
+        </main>
+    </body>
+</html>
