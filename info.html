@@ -31,8 +31,21 @@
             </div>
             <div id="contact">
                 <h2>Contact</h2>
-                <h3>If you'd like to submit your own magic item or get into contact with me, feel free to email me at: codingmiki@gmail.com</h3>
+                <h3>If you'd like to submit your own magic item or get into contact with me simply fill out the form below:</h3>
             </div>
+            <div class="formContainer">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="521b5464-58bd-4c75-b49e-44a458363399">
+                    <input type="text" name="name" id="formName" class="form-control" placeholder="Name" pattern="[A-Za-z/s]{2,20}" required>
+                    <input type="email" name="email" id="formEmail" class="form-control" placeholder="Email" required>
+                    <div id="form-text-container">
+                        <textarea name="message" maxlength="10000" id="textarea" placeholder="Type your message here.." required></textarea>    
+                    </div>                                   
+                    <div class="h-captcha" data-captcha="true"></div>
+                    <button type="submit">Submit Form</button>
+                </form>
+            </div>
+            <script src="https://web3forms.com/client/script.js" async defer></script>
         </main>
     </body>
 </html>
