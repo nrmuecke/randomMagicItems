@@ -70,13 +70,56 @@ nav > ul {
     list-style-type: none;
 }
 
+.navLink a {
+  font-family: 'Lucida Handwriting', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: transparent;
+  background: linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 1) 0%,
+      rgba(255, 154, 0, 1) 10%,
+      rgba(208, 222, 33, 1) 20%,
+      rgba(79, 220, 74, 1) 30%,
+      rgba(63, 218, 216, 1) 40%,
+      rgba(47, 201, 226, 1) 50%,
+      rgba(28, 127, 238, 1) 60%,
+      rgba(95, 21, 242, 1) 70%,
+      rgba(186, 12, 248, 1) 80%,
+      rgba(251, 7, 217, 1) 90%,
+      rgba(255, 0, 0, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
 #button-area {
     text-align: center;
     margin-top: -20px;
 }
 
 #title {
-    padding-top: 75px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 75px;    
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    width: 500px;
 }
 
 #dropdownLabel {
@@ -170,7 +213,7 @@ a {
 }
   
 #infoBody {
-    padding-top: 150px;
+    padding-top: 75px;
     width: 80%;
     margin: auto;
 }
@@ -242,6 +285,7 @@ select {
   .select:hover::after {
     color: #0070f3;
   }
+  /* End of Button styling */
 
   #rarityContainer {
     right: 120px;
@@ -260,6 +304,12 @@ select {
     display: block;    
 }
 
+#textarea {
+    margin-top: 10px;
+    width: 500px;
+    height: 150px;
+}
+
   /* mobile styling */
   @media (max-width: 525px) {
     .select {
@@ -272,5 +322,11 @@ select {
 
     #typeContainer {
         left: 77px;
+    }
+    #itemsContainer {
+      width: 100%;
+    }
+    #itemsList li {
+      padding-right: 40px;
     }
   }

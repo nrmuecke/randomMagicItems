@@ -329,4 +329,10 @@ select {
     #itemsList li {
       padding-right: 40px;
     }
+    #title {
+        width: 350px;
+    }
+    #nav-bar {
+        margin-right: 10%;
+    }
   }
