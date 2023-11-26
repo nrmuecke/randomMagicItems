@@ -333,6 +333,9 @@ select {
         width: 350px;
     }
     #nav-bar {
-        margin-right: 10%;
+        margin-right: 7%;
+    }
+    #textarea {
+        width: 300px;
     }
   }
