@@ -14,31 +14,13 @@
             <h4 class="corner-head"><a href="index.html">Random Magic Items</a></h4>
             <nav id="nav-bar">
                 <ul>
-                    <li><a href="info.html">Info</a></li>
-                    <li><a href="feedback.html">Feedback/Contact</a></li>
+                    <li class="navLink"><a href="info.html">Info</a></li>
+                    <li class="navLink"><a href="feedback.html">Feedback/Contact</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <form action="contact.php" method="post">
-                <div class="elem-group">              
-                  <label for="name" class="text">Your Name</label>              
-                  <input type="text" class="formField" id="formName" name="visitor_name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}" required>              
-                </div>              
-                <div class="elem-group">              
-                  <label for="email" class="text">Your E-mail</label>              
-                  <input type="email" class="formField" id="email" name="visitor_email" placeholder="john.doe@email.com" required>              
-                </div> 
-                <div class="elem-group">
-                  <label for="title" class="text">Subject</label>              
-                  <input type="text" id="subject" class="formField" name="email_title" required placeholder="New item submission or feedback" pattern="[A-Za-z0-9\s]{8,60}">            
-                </div>                                                
-                <div class="elem-group">              
-                  <label for="message" class="text">Write your message</label>              
-                  <textarea id="message" class="formField" name="visitor_message" placeholder="Say whatever you want." required></textarea>              
-                </div>            
-                <button type="submit">Submit</button>              
-              </form>              
+                         
         </main>
     </body>
 </html>
