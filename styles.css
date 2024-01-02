@@ -1,341 +1,382 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    --gray: #34495e;
-    --darkgray: #2c3e50;
+  --gray: #34495e;
+  --darkgray: #2c3e50;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
+  margin: 0;
+  padding: 0;
+  background-color: black;
 }
 
 header {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    background-color: #00001a;
-    justify-content: space-between;
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    z-index: 1;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  background-color: #00001a;
+  justify-content: space-between;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  z-index: 1;
 }
 
 .corner-head {
-    padding-left: 40px;
-    margin-top: 12px;
-    font-family: 'Lucida Handwriting', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: large
+  padding-left: 40px;
+  margin-top: 12px;
+  font-family: "Lucida Handwriting", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: large;
 }
 
 /* I found this rainbow gradient on stack overflow */
 .corner-head a {
-    color: transparent;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 154, 0, 1) 10%,
-        rgba(208, 222, 33, 1) 20%,
-        rgba(79, 220, 74, 1) 30%,
-        rgba(63, 218, 216, 1) 40%,
-        rgba(47, 201, 226, 1) 50%,
-        rgba(28, 127, 238, 1) 60%,
-        rgba(95, 21, 242, 1) 70%,
-        rgba(186, 12, 248, 1) 80%,
-        rgba(251, 7, 217, 1) 90%,
-        rgba(255, 0, 0, 1) 100%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
 }
+/* end gradient */
 
 #nav-bar {
-    width: 50%;
-    max-width: 200px;
-    height: 50px;
-    margin-right: 3%;
+  width: 50%;
+  max-width: 200px;
+  height: 50px;
+  margin-right: 3%;
 }
 
 nav > ul {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
-    align-items: center;
-    padding-inline-start: 0;
-    list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-inline-start: 0;
+  list-style-type: none;
 }
 
 .navLink a {
-  font-family: 'Lucida Handwriting', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Handwriting", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: transparent;
   background: linear-gradient(
-      90deg,
-      rgba(255, 0, 0, 1) 0%,
-      rgba(255, 154, 0, 1) 10%,
-      rgba(208, 222, 33, 1) 20%,
-      rgba(79, 220, 74, 1) 30%,
-      rgba(63, 218, 216, 1) 40%,
-      rgba(47, 201, 226, 1) 50%,
-      rgba(28, 127, 238, 1) 60%,
-      rgba(95, 21, 242, 1) 70%,
-      rgba(186, 12, 248, 1) 80%,
-      rgba(251, 7, 217, 1) 90%,
-      rgba(255, 0, 0, 1) 100%
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
 }
 
 #button-area {
-    text-align: center;
-    margin-top: -20px;
+  text-align: center;
+  margin-top: -35px;
 }
 
 #title {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding-top: 75px;    
-    background-image: linear-gradient(
-        90deg,
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 154, 0, 1) 10%,
-        rgba(208, 222, 33, 1) 20%,
-        rgba(79, 220, 74, 1) 30%,
-        rgba(63, 218, 216, 1) 40%,
-        rgba(47, 201, 226, 1) 50%,
-        rgba(28, 127, 238, 1) 60%,
-        rgba(95, 21, 242, 1) 70%,
-        rgba(186, 12, 248, 1) 80%,
-        rgba(251, 7, 217, 1) 90%,
-        rgba(255, 0, 0, 1) 100%
-    );
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 75px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  width: 500px;
 }
 
 #dropdownLabel {
-    padding-top: 44px;
-    margin: auto;
+  padding-top: 44px;
+  margin: auto;
 }
 
 .text {
-    color: white;
-    text-align: center;
+  color: white;
+  text-align: center;
 }
 
-#itemDisplay {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
+.itemDisplay {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 #dropdownLabel {
-    margin-top: -30px;
+  margin-top: -30px;
 }
 
 #dropdown {
-    margin-top: -40px;
+  margin-top: -40px;
 }
 
-  #input {
-    width: 190px;
-    height: 30px;
-  }
+#input {
+  width: 190px;
+  height: 30px;
+}
 
-  #listHead {
-    max-width: 250px;
-    margin: auto;
-    padding-top: 100px;
-    padding-bottom: 15px;
-    color: transparent;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 154, 0, 1) 10%,
-        rgba(208, 222, 33, 1) 20%,
-        rgba(79, 220, 74, 1) 30%,
-        rgba(63, 218, 216, 1) 40%,
-        rgba(47, 201, 226, 1) 50%,
-        rgba(28, 127, 238, 1) 60%,
-        rgba(95, 21, 242, 1) 70%,
-        rgba(186, 12, 248, 1) 80%,
-        rgba(251, 7, 217, 1) 90%,
-        rgba(255, 0, 0, 1) 100%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-  }
+#listHead {
+  max-width: 250px;
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 15px;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 
 #itemsList {
-    list-style: none;
+  list-style: none;
 }
 
 #itemsList li {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 #itemsContainer {
-    width: 90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
 }
 
 #inputContainer {
-    text-align: center;
+  text-align: center;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 #orContainer {
-    margin-top: -10px;
+  margin-top: -10px;
 }
 
 #searchLinkContainer {
-    text-align: center;
-    margin-top: -5px;
+  text-align: center;
+  margin-top: -5px;
 }
 
 #searchLink {
-    color: #66ccff;
-    padding: 8px;
-    border: 1px solid white;
-    border-radius: 5px;
-}
-  
-#infoBody {
-    padding-top: 75px;
-    width: 80%;
-    margin: auto;
+  color: #66ccff;
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
-/* The following styles the main button and is from: copy-paste-css.com */
+#infoBody {
+  padding-top: 75px;
+  width: 80%;
+  margin: auto;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(1px);
+  }
+}
+
+/* main button from: copy-paste-css.com */
 .button {
-    display: inline-block;
-    outline: 0;
-    cursor: pointer;
-    border: none;
-    padding: 0 56px;
-    height: 45px;
-    line-height: 45px;
-    border-radius: 7px;
-    background-color: #0070f3;
-    color: white;
-    font-weight: 400;
-    font-size: 16px;
-    box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
-    transition: background 0.2s ease,color 0.2s ease,box-shadow 0.2s ease;
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border: none;
+  padding: 0 56px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 7px;
+  background-color: #0070f3;
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.animate-shake {
+  animation: shake 1s ease-in-out;
 }
 
 .button:hover {
-    background-color: rgba(0, 100, 255, 0.9);
-    box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
+  background-color: rgba(0, 100, 255, 0.9);
+  box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
+}
+/* end button styling */
+
+/* select styling */
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 10px rgb(255, 255, 255);
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  width: 13em;
+  height: 3em;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #34495e;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #0070f3;
+}
+/* end select styling */
+
+#rarityContainer {
+  right: 120px;
 }
 
-select {
-    /* Reset Select */
-    appearance: none;
-    outline: 10px rgb(255, 255, 255);
-    border: 0;
-    box-shadow: none;
-    /* Personalize */
-    flex: 1;
-    padding: 0 1em;
-    color: #fff;
-    background-color: var(--darkgray);
-    background-image: none;
-    cursor: pointer;
-  }
-  /* Remove IE arrow */
-  select::-ms-expand {
-    display: none;
-  }
-  /* Custom Select wrapper */
-  .select {
-    position: relative;
-    display: flex;
-    text-align: center;
-    margin: auto;
-    width: 13em;
-    height: 3em;
-    border-radius: .25em;
-    overflow: hidden;
-  }
-  /* Arrow */
-  .select::after {
-    content: '\25BC';
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1em;
-    background-color: #34495e;
-    transition: .25s all ease;
-    pointer-events: none;
-  }
-  /* Transition */
-  .select:hover::after {
-    color: #0070f3;
-  }
-  /* End of Button styling */
-
-  #rarityContainer {
-    right: 120px;
-  }
-
-  #typeContainer {
-    left: 120px;
-    bottom: 48px;
-  }
+#typeContainer {
+  left: 120px;
+  bottom: 48px;
+}
 
 .hideItems {
-    display: none;
+  display: none;
 }
 
 .showItems {
-    display: block;    
+  display: block;
 }
 
 #textarea {
-    margin-top: 10px;
-    width: 500px;
-    height: 150px;
+  margin-top: 10px;
+  width: 500px;
+  height: 150px;
 }
 
-  /* mobile styling */
-  @media (max-width: 525px) {
-    .select {
-        width: 9em;
-    }
+#multiplierContainer {
+  width: 6em;
+  margin-top: -10px;
+}
 
-    #rarityContainer {
-        right: 77px;
-    }
+#timesIcon {
+  color: white;
+  position: relative;
+  left: 700px;
+  top: 23px;
+}
 
-    #typeContainer {
-        left: 77px;
-    }
-    #itemsContainer {
-      width: 100%;
-    }
-    #itemsList li {
-      padding-right: 40px;
-    }
-    #title {
-        width: 350px;
-    }
-    #nav-bar {
-        margin-right: 7%;
-    }
-    #textarea {
-        width: 300px;
-    }
+.hideButton {
+  display: none !important;
+}
+
+.reroll {
+  display: block;
+  margin: 0 auto;
+}
+
+/* mobile styling */
+@media (max-width: 525px) {
+  .select {
+    width: 9em;
   }
+
+  #rarityContainer {
+    right: 77px;
+  }
+
+  #typeContainer {
+    left: 77px;
+  }
+  #itemsContainer {
+    width: 100%;
+  }
+  #itemsList li {
+    padding-right: 40px;
+  }
+}

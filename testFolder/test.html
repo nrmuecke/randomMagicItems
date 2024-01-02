@@ -1,81 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Dungeons and Dragons Magic Items Randomizer" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Random Magic Items</title>
-        <link rel="stylesheet" href="styleTest.css" />
-        <script type="module" src="test.js"></script>
-    </head>
-    <body>
-        <header id="header">
-            <!--Upper left corner header-->
-            <h4 class="corner-head"><a href="index.html">Random Magic Items</a></h4>
-            <nav id="nav-bar">
-                <ul>                    
-                    <li class="navLink"><a href="info.html">Info/Contact</a></li>            
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <h1 id="title">Magic Item Randomizer for D&D</h1>
-            <div class="selectContainer">
-                <div class="select" id="rarityContainer">                
-                    <select name="rarity" id="raritySelect">
-                        <option id="all" class="allSelect" value="">Any Rarity</option>
-                        <option id="common" class="commonSelect" value="common" style="color:brown">Common</option>
-                        <option id="uncommon" class="uncommonSelect" value="uncommon" style="color:orange">Uncommon</option>
-                        <option id="rare" class="rareSelect" value="rare" style="color:yellow">Rare</option>
-                        <option id="veryRare" class="veryRareSelect" value="very rare" style="color:green">Very Rare</option>
-                        <option id="legendary" class="legendarySelect" value="legendary" style="color:blue">Legendary</option>
-                        <option id="artifact" class="artifactSelect" value="artifact" style="color:purple">Artifact</option>
-                        <option id="varies" class="variesSelect" value="varies">Varies</option>
-                    </select>
-                </div>
-                <div class="select" id="typeContainer">                
-                    <select name="rarity" id="typeSelect">
-                        <option id="all" class="allSelect" value="">Any Type</option>
-                        <option id="weapon" value="Weapon">Weapon</option>
-                        <option id="scroll" value="Scroll">Scroll</option>
-                        <option id="wondrous" value="Wondrous item">Wondrous Item</option>
-                        <option id="armor" value="Armor">Armor</option>
-                        <option id="potion" value="Potion">Potion</option>
-                        <option id="wand" value="Wand">Wand</option>
-                        <option id="ammunition" value="Ammunition">Ammunition</option>
-                        <option id="rod" value="Rod">Rod</option>
-                        <option id="ring" value="Ring">Ring</option>
-                        <option id="staff" value="Staff">Staff</option>
-                    </select>
-                </div>
-            </div>
-            <div id="button-area">                
-                <button type="button" id="button" class="button">Random Magic Item</button>
-            </div>
-            <div id="orContainer">
-                <p class="text">or</p>
-            </div>
-            <div id="inputContainer">
-                <input type="text" id="input" placeholder="Search all Magic Items..">
-            </div>
-            <div id="itemsContainer">
-                <ul id="itemsList" class="text"></ul>
-            </div>
-            <div class="itemDisplay" id="itemDisplay">
-                <h1 class="text" id="itemName">
-                    <span id="name"></span><br />
-                </h1>
-                <h3 class="text">
-                    <span id="rarity"></span>
-                </h3>
-                <h3 class="text">
-                    <span id="type"></span>
-                </h3>
-                <p class="text">
-                    <span id="desc"></span>
-                </p>                
-            </div>
-        </main>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dungeons and Dragons Magic Items Randomizer"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Random Magic Items</title>
+    <script
+      src="https://kit.fontawesome.com/28223f7270.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styleTest.css" />
+    <script type="module" src="test.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <!--Upper left corner header-->
+      <h4 class="corner-head"><a href="index.html">Random Magic Items</a></h4>
+      <nav id="nav-bar">
+        <ul>
+          <li class="navLink"><a href="info.html">Info/Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 id="title">Magic Item Randomizer for D&D</h1>
+      <div class="selectContainer">
+        <!-- rarity select -->
+        <div class="select" id="rarityContainer">
+          <select name="rarity" id="raritySelect">
+            <option id="all" class="allSelect" value="">Any Rarity</option>
+            <option
+              id="common"
+              class="commonSelect"
+              value="common"
+              style="color: brown"
+            >
+              Common
+            </option>
+            <option
+              id="uncommon"
+              class="uncommonSelect"
+              value="uncommon"
+              style="color: orange"
+            >
+              Uncommon
+            </option>
+            <option
+              id="rare"
+              class="rareSelect"
+              value="rare"
+              style="color: yellow"
+            >
+              Rare
+            </option>
+            <option
+              id="veryRare"
+              class="veryRareSelect"
+              value="very rare"
+              style="color: green"
+            >
+              Very Rare
+            </option>
+            <option
+              id="legendary"
+              class="legendarySelect"
+              value="legendary"
+              style="color: blue"
+            >
+              Legendary
+            </option>
+            <option
+              id="artifact"
+              class="artifactSelect"
+              value="artifact"
+              style="color: purple"
+            >
+              Artifact
+            </option>
+            <option id="varies" class="variesSelect" value="varies">
+              Varies
+            </option>
+          </select>
+        </div>
+        <!-- type select -->
+        <div class="select" id="typeContainer">
+          <select name="rarity" id="typeSelect">
+            <option id="all" class="allSelect" value="">Any Type</option>
+            <option id="weapon" value="Weapon">Weapon</option>
+            <option id="scroll" value="Scroll">Scroll</option>
+            <option id="wondrous" value="Wondrous item">Wondrous Item</option>
+            <option id="armor" value="Armor">Armor</option>
+            <option id="potion" value="Potion">Potion</option>
+            <option id="wand" value="Wand">Wand</option>
+            <option id="ammunition" value="Ammunition">Ammunition</option>
+            <option id="rod" value="Rod">Rod</option>
+            <option id="ring" value="Ring">Ring</option>
+            <option id="staff" value="Staff">Staff</option>
+          </select>
+        </div>
+      </div>
+      <!-- button -->
+      <div id="button-area">
+        <button type="button" id="button" class="button">
+          Random Magic Item
+        </button>
+      </div>
+      <div class="timesIcon">
+        <i class="fas fa-times" id="timesIcon"></i>
+      </div>
+      <div class="select" id="multiplierContainer">
+        <select name="multiplier" id="multiplier">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+        </select>
+      </div>
+      <!-- or search -->
+      <div id="orContainer">
+        <p class="text">or</p>
+      </div>
+      <!-- searched item display -->
+      <div id="inputContainer">
+        <input type="text" id="input" placeholder="Search all Magic Items.." />
+      </div>
+      <div id="itemsContainer">
+        <ul id="itemsList" class="text"></ul>
+      </div>
+      <!-- random magic item display -->
+      <div class="itemDisplay" id="itemDisplay1">
+        <h1 class="text" id="itemName"><span class="name"></span><br /></h1>
+        <h3 class="text">
+          <span class="rarity"></span>
+        </h3>
+        <h3 class="text">
+          <span class="type"></span>
+        </h3>
+        <p class="text">
+          <span class="desc"></span>
+        </p>
+        <button type="button" class="reroll hideButton button">
+          Reroll #1
+        </button>
+      </div>
+      <div class="itemDisplay" id="itemDisplay2">
+        <h1 class="text" id="itemName"><span class="name"></span><br /></h1>
+        <h3 class="text">
+          <span class="rarity"></span>
+        </h3>
+        <h3 class="text">
+          <span class="type"></span>
+        </h3>
+        <p class="text">
+          <span class="desc"></span>
+        </p>
+        <button type="button" class="reroll hideButton button">
+          Reroll #2
+        </button>
+      </div>
+      <div class="itemDisplay" id="itemDisplay3">
+        <h1 class="text" id="itemName"><span class="name"></span><br /></h1>
+        <h3 class="text">
+          <span class="rarity"></span>
+        </h3>
+        <h3 class="text">
+          <span class="type"></span>
+        </h3>
+        <p class="text">
+          <span class="desc"></span>
+        </p>
+        <button type="button" class="reroll hideButton button">
+          Reroll #3
+        </button>
+      </div>
+      <div class="itemDisplay" id="itemDisplay4">
+        <h1 class="text" id="itemName"><span class="name"></span><br /></h1>
+        <h3 class="text">
+          <span class="rarity"></span>
+        </h3>
+        <h3 class="text">
+          <span class="type"></span>
+        </h3>
+        <p class="text">
+          <span class="desc"></span>
+        </p>
+        <button type="button" class="reroll hideButton button">
+          Reroll #4
+        </button>
+      </div>
+      <div class="itemDisplay" id="itemDisplay5">
+        <h1 class="text" id="itemName"><span class="name"></span><br /></h1>
+        <h3 class="text">
+          <span class="rarity"></span>
+        </h3>
+        <h3 class="text">
+          <span class="type"></span>
+        </h3>
+        <p class="text">
+          <span class="desc"></span>
+        </p>
+        <button type="button" class="reroll hideButton button">
+          Reroll #5
+        </button>
+      </div>
+      <div class="itemDisplay" id="itemDisplay6">
+        <h1 class="text" id="itemName"><span class="name"></span><br /></h1>
+        <h3 class="text">
+          <span class="rarity"></span>
+        </h3>
+        <h3 class="text">
+          <span class="type"></span>
+        </h3>
+        <p class="text">
+          <span class="desc"></span>
+        </p>
+        <button type="button" class="reroll hideButton button">
+          Reroll #6
+        </button>
+      </div>
+      <div class="itemDisplay" id="itemDisplay7">
+        <h1 class="text" id="itemName"><span class="name"></span><br /></h1>
+        <h3 class="text">
+          <span class="rarity"></span>
+        </h3>
+        <h3 class="text">
+          <span class="type"></span>
+        </h3>
+        <p class="text">
+          <span class="desc"></span>
+        </p>
+        <button type="button" class="reroll hideButton button">
+          Reroll #7
+        </button>
+      </div>
+    </main>
+  </body>
 </html>
