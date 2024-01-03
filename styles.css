@@ -366,6 +366,10 @@ select::-ms-expand {
     width: 9em;
   }
 
+  #title {
+    max-width: 350px;
+  }
+
   #rarityContainer {
     right: 77px;
   }
