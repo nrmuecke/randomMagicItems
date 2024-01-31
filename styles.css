@@ -133,12 +133,19 @@ nav > ul {
 .text {
   color: white;
   text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .itemDisplay {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  border-radius: 15px;
+  border: solid #86a4ad;
+  padding-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 #dropdownLabel {

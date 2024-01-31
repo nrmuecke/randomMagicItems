@@ -3,38 +3,45 @@ document.addEventListener("DOMContentLoaded", function () {
   const magicItemsData = "magicitems.json";
 
   // button shake animation
-  var button = document.getElementById("button");
+  // var button = document.getElementById("button");
 
-  function startShake() {
-    button.classList.add("animate-shake");
+  // function startShake() {
+  //   button.classList.add("animate-shake");
 
-    setTimeout(function () {
-      button.classList.remove("animate-shake");
-    }, 1000);
-  }
+  //   setTimeout(function () {
+  //     button.classList.remove("animate-shake");
+  //   }, 1000);
+  // }
 
-  setTimeout(startShake, 5000);
+  // setTimeout(startShake, 5000);
 
-  setInterval(startShake, 20000);
+  // setInterval(startShake, 20000);
 
   // This function creates an array from the json file based on the rarity chosen in the dropdown menu on the index page
-  // and then spits out a random magical item from that array. This function is called when the button is pressed.
+  // and then spits out a random magical item from that array. This function is called when the "random magic item" button is pressed.
   async function getMagicItems() {
-    // Hide searched items in case the search function was used
-    document.getElementById("itemsList").className = "text hideItems";
-    // set random item display to no longer be hidden
-    var displays = document.getElementsByClassName("itemDisplay");
-
-    for (var i = 0; i < displays.length; i++) {
-      displays[i].classList.remove("hideItems");
-    }
-
     const response = await fetch(magicItemsData);
     const magicItems = await response.json();
     const itemDisplays = document.querySelectorAll(".itemDisplay");
     const multiplierSelect = document.getElementById("multiplier");
     var selectedValue = multiplierSelect.value;
     const multiplier = parseInt(selectedValue, 10);
+
+    // Hide searched items in case the search function was used
+    document.getElementById("itemsList").className = "text hideItems";
+    // set random item display to no longer be hidden
+    var displays = document.getElementsByClassName("itemDisplay");
+
+    for (var i = 0; i < multiplier; i++) {
+      displays[i].classList.remove("hideItems");
+      if (multiplier < displays.length) {
+        for (var j = multiplier; j < displays.length; j++) {
+          if (!displays[j].classList.contains("hideItems")) {
+            displays[j].classList.add("hideItems");
+          }
+        }
+      }
+    }
 
     // variables for dropdown selections
     var raritySelect = document.getElementById("raritySelect").value;
@@ -49,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       itemDisplay.querySelector(".desc").textContent = "";
     });
 
+    // check the multiplier and display the amount of items chosen
     for (let n = 0; n < multiplier && n < itemDisplays.length; n++) {
       const itemDisplay = itemDisplays[n];
       // if no dropdown is selected then pull an item from the entire list
@@ -142,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
           itemDisplay.querySelector(".name").style.color = "white";
       }
     }
+    // hide or display reroll button for individual items
     itemDisplays.forEach((itemDisplay) => {
       const rerollButton = itemDisplay.querySelector(".reroll");
       if (itemDisplay.querySelector(".name").textContent !== "") {
